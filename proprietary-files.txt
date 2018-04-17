@@ -58,6 +58,7 @@ vendor/lib64/libaudcal.so
 vendor/lib64/soundfx/libqcbassboost.so
 vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
+lib/soundfx/libdirac.so
 
 # Audio ACDB
 etc/acdbdata/adsp_avs_config.acdb
