@@ -22,13 +22,22 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/xiaomi/jason/device.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+$(call inherit-product, vendor/xenonhd/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_jason
+PRODUCT_NAME := xenonhd_jason
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := jason
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_MODEL := Mi Note 3
+
+PRODUCT_PROPERTY_OVERRIDES += ro.xenonhd.maintainer="AlexM0rtis"
+
+# Root options
+ROOT_METHOD=magisk
+
+# 3rd party apps - choose which you want to build
+PRODUCT_PACKAGES += \
+    AdAway
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 

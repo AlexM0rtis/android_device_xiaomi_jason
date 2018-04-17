@@ -27,6 +27,9 @@ DEVICE_PATH := device/xiaomi/jason
 SDCLANG := true
 TARGET_USE_SDCLANG := true
 
+#CCache
+export USE_CCACHE=1
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := sdm660
 TARGET_NO_BOOTLOADER := true
