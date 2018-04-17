@@ -84,12 +84,12 @@ function configure_memory_parameters() {
         echo 70 > /sys/module/process_reclaim/parameters/pressure_max
         echo 30 > /sys/module/process_reclaim/parameters/swap_opt_eff
         echo 512 > /sys/module/process_reclaim/parameters/per_swap_size
-        echo 100 > /proc/sys/vm/swappiness
+#        echo 100 > /proc/sys/vm/swappiness
     else
         # Set swappiness to 60
         # Disable process reclaim for config with memory greater than 3.5 GB
         echo 0 > /sys/module/process_reclaim/parameters/enable_process_reclaim
-        echo 60 > /proc/sys/vm/swappiness
+#        echo 60 > /proc/sys/vm/swappiness
     fi
 
 
@@ -1650,9 +1650,9 @@ case "$target" in
             echo 3 > /proc/sys/kernel/sched_window_stats_policy
             echo 3 > /proc/sys/kernel/sched_ravg_hist_size
         fi
-        #Apply settings for sdm660, sdm636,sda636
+        #Apply settings for sdm660
         case "$soc_id" in
-                "317" | "324" | "325" | "326" | "345" | "346" )
+                "317" | "324" | "325" | "326" )
 
             echo 2 > /sys/devices/system/cpu/cpu4/core_ctl/min_cpus
             echo 60 > /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres
@@ -1740,9 +1740,12 @@ case "$target" in
             # re-enable thermal and BCL hotplug
             echo 1 > /sys/module/msm_thermal/core_control/enabled
 
-            #Enable input boost configuration
+            # enable input boost
             echo "0:1401600" > /sys/module/cpu_boost/parameters/input_boost_freq
-            echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
+            echo 60 > /sys/module/cpu_boost/parameters/input_boost_ms
+            echo "0:0 1:0 2:0 3:0 4:2150400 5:0 6:0 7:0" > /sys/module/cpu_boost/parameters/powerkey_input_boost_freq
+            echo 400 > /sys/module/cpu_boost/parameters/powerkey_input_boost_ms
+
             # Set Memory parameters
             configure_memory_parameters
 

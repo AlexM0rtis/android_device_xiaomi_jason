@@ -95,7 +95,7 @@
 <MediaSettings>
     <!-- Each camcorder profile defines a set of predefined configuration parameters -->
     <!-- Back Camera -->
-    <CamcorderProfiles cameraId="0">
+    <CamcorderProfiles cameraId="0" startOffsetMs="300">
 
     <EncoderProfile quality="low" fileFormat="3gp" duration="30">
       <Video codec="h264"
@@ -354,7 +354,7 @@
     <EncoderProfile quality="timelapse480p" fileFormat="mp4" duration="30">
       <Video codec="h264"
              bitRate="2000000"
-             width="640"
+             width="720"
              height="480"
              frameRate="30" />
 
@@ -454,7 +454,7 @@
 
     </CamcorderProfiles>
     <!-- Front Camera -->
-    <CamcorderProfiles cameraId="1">
+    <CamcorderProfiles cameraId="1" startOffsetMs="300">
 
     <EncoderProfile quality="low" fileFormat="3gp" duration="30">
       <Video codec="h264"
@@ -707,7 +707,7 @@
 
     </CamcorderProfiles>
     <!-- Logical Camera -->
-    <CamcorderProfiles cameraId="2">
+    <CamcorderProfiles cameraId="2" startOffsetMs="300">
 
     <EncoderProfile quality="low" fileFormat="3gp" duration="30">
       <Video codec="h264"
@@ -966,7 +966,7 @@
     <EncoderProfile quality="timelapse480p" fileFormat="mp4" duration="30">
       <Video codec="h264"
              bitRate="2000000"
-             width="640"
+             width="720"
              height="480"
              frameRate="30" />
 
@@ -1066,7 +1066,7 @@
 
     </CamcorderProfiles>
     <!-- Logical Camera -->
-    <CamcorderProfiles cameraId="3">
+    <CamcorderProfiles cameraId="3" startOffsetMs="300">
 
     <EncoderProfile quality="low" fileFormat="3gp" duration="30">
       <Video codec="h264"
